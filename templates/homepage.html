@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Scheduler</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+
+   <style>
+      h1 {
+          margin-top: 0;
+      }
+
+      ul {
+          margin: 0;
+          padding: 0;
+          list-style: none;
+      }
+
+      form {
+          margin: 20px auto;
+          width: 800px;
+          padding: 1em;
+          border: 1px solid #CCC;
+          border-radius: 1em;
+      }
+
+      div+div {
+          margin-top: 1em;
+      }
+
+      label span {
+          display: inline-block;
+          width: 120px;
+          text-align: right;
+      }
+
+      input, textarea {
+          font: 1em sans-serif;
+          width: 250px;
+          box-sizing: border-box;
+          border: 1px solid #999;
+      }
+
+      input[type=checkbox], input[type=radio] {
+          width: auto;
+          border: none;
+      }
+
+      input:focus, textarea:focus {
+          border-color: #000;
+      }
+
+      textarea {
+          vertical-align: top;
+          height: 5em;
+          resize: vertical;
+      }
+
+      fieldset {
+          width: 250px;
+          box-sizing: border-box;
+          margin-left: 136px;
+          border: 1px solid #999;
+      }
+
+      button {
+          margin: 20px 0 0 124px;
+      }
+
+      label {
+        position: relative;
+      }
+
+      label em {
+        position: absolute;
+        right: 5px;
+        top: 20px;
+      }
+
+      .div2 {
+        width: 700px;
+        height: auto;
+        padding: 50px;
+        border: 1px solid #CCC;
+        border-radius: 1em;
+      }
+      .custom-checkbox{
+        padding-left: 30px;
+      }
+    </style>
+
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+    <form  method="POST" action ="{% url "make-schedule" %}">
+    {% csrf_token %}
+          <h1>SCHEDULER</h1>
+        <h5>Aradığınız derslerin kodlarını yazınız.</h5>
+        <p>Büyük harf ve boşluk kullanın, örnek: "EHB 101".</p>
+        <p>İstediğiniz dersleri kutucuklara ayrı ayrı yazdıktan sonra kalanları boş bırakabilirsiniz.</p>
+
+
+          <section>
+            Ders adı:<br>
+            <input type="text" name="coursename"><br>
+          </section>
+          <section>
+             Ders adı:<br>
+             <input type="text" name="coursename"><br>
+          </section>
+          <section>
+             Ders adı:<br>
+             <input type="text" name="coursename"><br>
+          </section>
+          <section>
+             Ders adı:<br>
+             <input type="text" name="coursename"><br>
+          </section>
+           <section>
+             Ders adı:<br>
+             <input type="text" name="coursename"><br>
+          </section>
+          <section>
+             Ders adı:<br>
+             <input type="text" name="coursename"><br>
+          </section>
+          <section>
+             Ders adı:<br>
+             <input type="text" name="coursename"><br>
+          </section>
+          <section>
+            Ders adı:<br>
+            <input type="text" name="coursename"><br>
+          </section>
+            <section>
+            Ders adı:<br>
+            <input type="text" name="coursename"><br>
+          </section>
+            <section>
+            Ders adı:<br>
+            <input type="text" name="coursename"><br>
+          </section>
+        <br></br>
+        <section>
+            <h5>Haftanın hangi günlerinde dersiniz olmasını istediğinizi seçiniz.</h5>
+                <div class="custom-control custom-checkbox ">
+                  <input type="checkbox" class="custom-control-input" id="defaultInline6s" name="weekday_select" value="1">
+                  <label class="custom-control-label" for="defaultInline6s">Pazartesi</label>
+                </div>
+
+                <div class="custom-control custom-checkbox">
+                  <input type="checkbox" class="custom-control-input" id="defaultInline7s" name="weekday_select" value="2">
+                  <label class="custom-control-label" for="defaultInline7s">Salı</label>
+                </div>
+
+                <!-- Default inline 8-->
+                <div class="custom-control custom-checkbox">
+                  <input type="checkbox" class="custom-control-input" id="defaultInline8s" name="weekday_select" value="3">
+                  <label class="custom-control-label" for="defaultInline8s">Çarşamba</label>
+                </div>
+
+                 <div class="custom-control custom-checkbox">
+                  <input type="checkbox" class="custom-control-input" id="defaultInline9s" name="weekday_select" value="4">
+                  <label class="custom-control-label" for="defaultInline9s">Perşembe</label>
+                </div>
+
+                <div class="custom-control custom-checkbox">
+                  <input type="checkbox" class="custom-control-input" id="defaultInline10s" name="weekday_select" value="5">
+                  <label class="custom-control-label" for="defaultInline10s">Cuma</label>
+                </div>
+         </section>
+
+         <section>
+           <h5>Derslerinizi almak istediğiniz kampüsü seçiniz.</h5>
+            <!-- Group of default radios - option 1 -->
+            <div class="custom-control custom-radio">
+              <input type="radio" class="custom-control-input" id="defaultGroupExample1" name="campus_Radios"value="Ayazaga">
+              <label class="custom-control-label" for="defaultGroupExample1">Ayazağa</label>
+            </div>
+
+            <!-- Group of default radios - option 2 -->
+            <div class="custom-control custom-radio">
+              <input type="radio" class="custom-control-input" id="defaultGroupExample2" name="campus_Radios" value="Gumussuyu">
+              <label class="custom-control-label" for="defaultGroupExample2">Gümüşsuyu</label>
+            </div>
+
+            <!-- Group of default radios - option 3 -->
+            <div class="custom-control custom-radio">
+              <input type="radio" class="custom-control-input" id="defaultGroupExample3" name="campus_Radios"value="Taskısla">
+              <label class="custom-control-label" for="defaultGroupExample3">Taşkışla</label>
+            </div>
+
+              <!-- Group of default radios - option 4 -->
+            <div class="custom-control custom-radio">
+              <input type="radio" class="custom-control-input" id="defaultGroupExample4" name="campus_Radios" value="Macka">
+              <label class="custom-control-label" for="defaultGroupExample4">Maçka</label>
+            </div>
+
+             <!-- Group of default radios - option 5 -->
+            <div class="custom-control custom-radio">
+              <input type="radio" class="custom-control-input" id="defaultGroupExample5" name="campus_Radios"value="Tuzla">
+              <label class="custom-control-label" for="defaultGroupExample5">Tuzla</label>
+            </div>
+
+
+
+         </section>
+
+
+        <section>
+           <h5>İstediğiniz derslerin hepsinin kodlarını ekledikten ve uygun günleri seçtikten sonra "Program oluştur" butonuna basınız.</h5>
+
+        </section>
+        <section>
+            <p> <button class='btn btn-outline-success my-2 my-sm-0' type="submit" role="button">Program oluştur</button> </p>
+        </section>
+    </form>
+</body>
+</html>
